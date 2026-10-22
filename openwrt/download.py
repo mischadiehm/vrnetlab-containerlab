@@ -63,7 +63,7 @@ def main():
     soup = BeautifulSoup(c, "lxml")
     links = soup.find_all("a")
     for l in links:
-        m = re.search('\/\/', l.attrs['href'])
+        m = re.search(r'\/\/', l.attrs['href'])
         if not m:
             rel_url = "{}{}x86/64/".format(base_url, l.attrs['href'])
         else:
@@ -71,7 +71,7 @@ def main():
             new_href = 'https:' + current_href
             l['href'] = new_href
             rel_url = "{}x86/64/".format(l.attrs['href'])
-        m = re.search('[^0-9]([0-9]{2}\.[0-9]{2}[^0-9](?:[0-9]{1,2}))|[^0-9]([0-9]{2}\.[0-9]{2})', l.attrs['href'])
+        m = re.search(r'[^0-9]([0-9]{2}\.[0-9]{2}[^0-9](?:[0-9]{1,2}))|[^0-9]([0-9]{2}\.[0-9]{2})', l.attrs['href'])
         if not m:
             continue
         #print(l.string.strip(), l.attrs['href'], rel_url)
