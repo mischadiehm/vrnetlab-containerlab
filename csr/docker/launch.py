@@ -46,7 +46,7 @@ class CSR_vm(vrnetlab.VM):
         for e in os.listdir("/"):
             if re.search(".qcow2$", e):
                 disk_image = "/" + e
-            if re.search("\.license$", e):
+            if re.search(r"\.license$", e):
                 os.rename("/" + e, "/tftpboot/license.lic")
 
         self.license = False

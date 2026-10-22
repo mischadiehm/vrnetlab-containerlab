@@ -94,9 +94,9 @@ class N9KV_vm(vrnetlab.VM):
 
         (ridx, match, res) = self.con_expect(
             [
-                b"\(yes\/skip\/no\)\[no\]:",
-                b"\(yes\/no\)\[n\]:",
-                b"\(yes\/no\)\[no\]:",
+                rb"\(yes\/skip\/no\)\[no\]:",
+                rb"\(yes\/no\)\[n\]:",
+                rb"\(yes\/no\)\[no\]:",
                 b"login:",
             ]
         )
